@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-style: border-box;
+}
+
+html {
+    font-size: 62.5%; /*the same with 10px*/
+}
+
+body {
+    font-size: 1.6rem; /*now the value for the font-size is 16px*/
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%; /*the images won't overflow their parent*/
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 20rem;
+}
