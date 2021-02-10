@@ -11,6 +11,8 @@ html {
 body {
     font-size: 1.6rem; /*now the value for the font-size is 16px*/
     font-family: 'Roboto', sans-serif;
+    color: #6a6768;
+    overflow-x: hidden;
 }
 
 a {
@@ -23,5 +25,165 @@ img {
 
 .grid-wrapper {
     display: grid;
-    grid-template-columns: 20rem;
+    grid-template-columns: 20rem 1fr;
+    height: 100vh; /*1vh - 1% of the viewport heigh*/
+}
+
+.sidebar {
+    grid-column: 1/2;
+    grid-row: span 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fade-in ease-in .5s;
+}
+
+.sidebar span {
+    transform: rotate(-90deg);
+    color: #484848; 
+    animation: fade-in ease-in .5s .2s;
+}
+
+.sidebar span:nth-child(2) {
+    width: 2px;
+    height: 10rem;
+    background-color: #484848;
+    transform: rotate(0);
+    margin: 2rem 0;
+}
+
+.master-header {
+    grid-column: 2/-1; /*/-1 indicates that we want the element to span from the second column to the end of the row*/
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+    animation: fade-in ease-in .5s;
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-list {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav-items {
+    margin-left: 5rem;
+}
+
+.nav-link {
+   font-size: 1.4rem;
+   text-transform: uppercase;
+   color: #6a6768;
+}
+
+.main-content {
+    grid-column: 2/-1;
+    grid-row: 2/4;
+}
+
+.main-content .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    height: 100%;
+}
+
+.description {
+    max-width: 50rem;
+    justify-self: start;
+}
+
+.item-title {
+    font-size: 9.6rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: #000;
+}
+
+.item-description {
+    margin-bottom: 4rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background-color: #b61428;
+    color: #fff;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.image-wrapper::after {
+    content: "";
+    width: 75rem;
+    height: 32rem;
+    background-color: #ffc5cc;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(29rem, -50%);
+    z-index: -2;
+}
+
+.bottle {
+
+}
+
+.rose {
+    position: absolute;
+    bottom: -3rem;
+    left: -15rem;
+    z-index: -1;
+}
+
+.master-footer {
+    grid-column: 2/-1; 
+    grid-row: 4/5;
+}
+
+.master-footer span {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+span.selected {
+    width: 3.5rem;
+    border-radius: 2rem;
+    background-color: #b61428;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
